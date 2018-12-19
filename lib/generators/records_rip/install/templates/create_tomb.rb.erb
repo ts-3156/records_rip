@@ -1,0 +1,21 @@
+# This migration creates the `tombs` table.
+class CreateTomb < ActiveRecord::Migration<%= migration_version %>
+
+  # The largest text column available in all supported RDBMS is
+  # 1024^3 - 1 bytes, roughly one gibibyte.  We specify a size
+  # so that MySQL will use `longtext` instead of `text`.  Otherwise,
+  # when serializing very large objects, `text` might not be big enough.
+  TEXT_BYTES = 1_073_741_823
+
+  def change
+    create_table :tombs<%= tombs_table_options %> do |t|
+      t.string   :item_type<%= item_type_options %>
+      t.integer  :item_id,   null: false
+      t.text     :object, limit: TEXT_BYTES
+
+      t.datetime :created_at
+
+      t.index %i(item_type item_id)
+    end
+  end
+end

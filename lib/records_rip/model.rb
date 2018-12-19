@@ -6,7 +6,16 @@ module RecordsRip
 
     class_methods do
       def rest_in_place
-        scope :tomb, -> { Tomb.where(item_type: self.class.to_s) }
+        model_class = self
+
+        model_class.send(
+            "before_destroy",
+            lambda do |record|
+              ::RecordsRip::Tomb.create(item_id: record.id, item_type: record.class.name, object: '{}')
+            end
+        )
+
+        scope :tomb, -> {::RecordsRip::Tomb.where(item_type: model_class.to_s)}
       end
     end
   end
