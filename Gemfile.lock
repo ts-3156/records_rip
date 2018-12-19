@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    records_rip (0.2.3)
+    records_rip (0.2.4)
       activesupport (>= 4.2, < 6.0)
 
 GEM
