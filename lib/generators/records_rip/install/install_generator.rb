@@ -19,7 +19,7 @@ module RecordsRip
     end
 
     def create_migration_file
-      add_records_rip_migration("create_tomb",
+      add_records_rip_migration("create_tombs",
                                 item_type_options: item_type_options,
                                 tombs_table_options: tombs_table_options)
     end
