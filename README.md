@@ -1,6 +1,6 @@
 # Records, R.I.P.
 
-This is a gem to let deleted records rest in peace.
+This is a gem to let deleted records rest in peace. :coffin:
 
 ## Getting Started
 
