@@ -1,4 +1,5 @@
 require "active_support"
+require "active_record"
 require "records_rip/version"
 require "records_rip/model"
 require "records_rip/tomb"
