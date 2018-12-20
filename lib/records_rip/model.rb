@@ -11,11 +11,14 @@ module RecordsRip
         model_class.send(
             "before_destroy",
             lambda do |record|
-              ::RecordsRip::Tomb.create(item_id: record.id, item_type: record.class.name, object: '{}')
+              epitaph = Hash[record.attributes.map {|k, v| [k, v]}]
+              ::RecordsRip::Tomb.create(item_id: record.id, item_type: record.class.name, epitaph: epitaph)
             end
         )
 
-        scope :tomb, -> {::RecordsRip::Tomb.where(item_type: model_class.to_s)}
+        define_singleton_method 'tomb' do |args = {}|
+          ::RecordsRip::Tomb.where(item_type: model_class.to_s).where_epitaph(args)
+        end
       end
     end
   end

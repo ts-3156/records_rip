@@ -11,4 +11,16 @@ class RecordsRipTest < Minitest::Test
     user.destroy
     assert RecordsRip::Tomb.all.size == 1
   end
+
+  def test_model_class_tomb
+    user = User.create!(name: 'John')
+    user.destroy
+    assert User.tomb(name: 'John').size == 1
+  end
+
+  def test_tomb_class_where_epitaph
+    user = User.create!(name: 'John')
+    user.destroy
+    assert ::RecordsRip::Tomb.where_epitaph(name: 'John').size == 1
+  end
 end

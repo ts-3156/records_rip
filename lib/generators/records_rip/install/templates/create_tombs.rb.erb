@@ -11,7 +11,7 @@ class CreateTombs < ActiveRecord::Migration<%= migration_version %>
     create_table :tombs<%= tombs_table_options %> do |t|
       t.string   :item_type<%= item_type_options %>
       t.integer  :item_id,   null: false
-      t.text     :object, limit: TEXT_BYTES
+      t.text     :epitaph, limit: TEXT_BYTES
 
       t.datetime :created_at
 

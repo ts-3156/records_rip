@@ -15,7 +15,7 @@ ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
 ActiveRecord::Migration.create_table :tombs do |t|
   t.string :item_type
   t.integer :item_id, null: false
-  t.text :object, limit: 1024
+  t.text :epitaph, limit: 1024
 end
 
 class ::RecordsRip::Tomb < ActiveRecord::Base
