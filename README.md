@@ -1,6 +1,8 @@
 # Records, R.I.P.
 
-This is a gem to let deleted records rest in peace. :coffin:
+This gem is a place to let deleted records rest in peace. :coffin:
+
+Soft deletes are evil. _Blest be y man y spares thes stones. And curst be he y moves my bones._
 
 ## Getting Started
 
@@ -20,8 +22,10 @@ end
 
 #### Scopes
 
+You can perform WHERE queries for `tombs#epitaph` based on attributes:
+
 ```ruby
-User.tomb.where(name: 'Smith')
+User.tomb(name: 'Smith')
 ```
 
 ## Contributing
