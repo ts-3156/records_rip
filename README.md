@@ -1,5 +1,8 @@
 # Records, R.I.P.
 
+[![Build Status](https://travis-ci.org/ts-3156/records_rip.svg?branch=master)](https://travis-ci.org/ts-3156/records_rip)
+[![Gem Version](https://badge.fury.io/rb/records_rip.svg)](https://badge.fury.io/rb/records_rip)
+
 This gem is a place to let deleted records rest in peace. :coffin:
 
 Soft deletes are evil. __Blest be y man y spares thes stones. And curst be he y moves my bones.__
