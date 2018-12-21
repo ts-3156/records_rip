@@ -40,4 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "mysql2", "~> 0.5.2"
+  spec.add_development_dependency "pg", "~> 1.1.3"
 end

@@ -43,6 +43,3 @@ matrix:
     - rvm: 2.4.5
       gemfile: gemfiles/ar_5.2.gemfile
   fast_finish: true
-
-addons:
-  postgresql: "9.4"
