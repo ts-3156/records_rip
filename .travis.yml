@@ -29,5 +29,20 @@ sudo: required
 before_install:
   - gem update bundler
 
+gemfile:
+  - gemfiles/ar_4.2.gemfile
+  - gemfiles/ar_5.1.gemfile
+  - gemfiles/ar_5.2.gemfile
+matrix:
+  exclude:
+    # optimization: don't test intermediate rubies (see above)
+    - rvm: 2.4.5
+      gemfile: gemfiles/ar_4.2.gemfile
+    - rvm: 2.4.5
+      gemfile: gemfiles/ar_5.1.gemfile
+    - rvm: 2.4.5
+      gemfile: gemfiles/ar_5.2.gemfile
+  fast_finish: true
+
 addons:
   postgresql: "9.4"
