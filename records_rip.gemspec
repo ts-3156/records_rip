@@ -34,6 +34,9 @@ Gem::Specification.new do |spec|
   spec.required_rubygems_version = ">= 1.3.6"
   spec.required_ruby_version = ">= 2.3.0"
 
+  spec.required_rubygems_version = ">= 1.3.6"
+  spec.required_ruby_version = ">= 2.3.0"
+
   spec.add_dependency "activerecord", [">= 4.2", "< 6.0"]
 
   spec.add_development_dependency "bundler"
