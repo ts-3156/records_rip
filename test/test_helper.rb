@@ -28,3 +28,11 @@ end
 class User < ActiveRecord::Base
   rest_in_place
 end
+
+ActiveRecord::Migration.create_table :members do |t|
+  t.string :name
+end
+
+class Member < ActiveRecord::Base
+  rest_in_place {|record| Hash[record.attributes.map {|k, v| [k, "Great #{v}"]}] }
+end

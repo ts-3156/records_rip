@@ -3,6 +3,7 @@ require_relative "test_helper"
 class RecordsRipTest < Minitest::Test
   def setup
     User.delete_all
+    Member.delete_all
     RecordsRip::Tomb.delete_all
   end
 
@@ -22,5 +23,11 @@ class RecordsRipTest < Minitest::Test
     user = User.create!(name: 'John')
     user.destroy
     assert ::RecordsRip::Tomb.where_epitaph(name: 'John').size == 1
+  end
+
+  def test_block_given
+    member = Member.create!(name: 'John')
+    member.destroy
+    assert ::RecordsRip::Tomb.where_epitaph(name: 'Great John').size == 1
   end
 end
