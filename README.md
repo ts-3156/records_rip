@@ -49,6 +49,12 @@ User.tomb(name: 'Great Smith').to_a
 # => [#<RecordsRip::Tomb id: 1, item_type: "User", item_id: 1, epitaph: "{\"id\"=>1, \"name\"=>\"Great Smith\"}">]
 ```
 
+## Greater libraries
+
+If you need perfect audit logs, I recommend you to use paper_trail gem.
+
+- [paper_trail](https://github.com/paper-trail-gem/paper_trail)
+
 ## Contributing
 
 Everyone is encouraged to help improve this project. Here are a few ways you can help:
