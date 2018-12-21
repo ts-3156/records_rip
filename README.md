@@ -15,6 +15,13 @@ Add this line to your application’s Gemfile:
 gem 'records_rip'
 ```
 
+Add a tombs table to your database:
+
+```sh
+rails generate records_rip:install
+rake db:migrate
+```
+
 Add `rest_in_peace` to the models you want to visit the tomb.
 
 ```ruby
