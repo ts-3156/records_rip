@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    records_rip (0.5.0)
+    records_rip (0.5.1)
       activerecord (>= 4.2, < 6.0)
 
 GEM
